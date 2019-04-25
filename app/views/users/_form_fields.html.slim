@@ -1,20 +1,5 @@
 = collapsible_box :main_data, form: true do
   = f.input :name
   = f.input :surname
-  = f.input :initials
-  = f.input :gender, collection: User.human_genders.invert
-  = f.input :birthday, as: :string, input_html: { class: 'datepicker' }
   = f.input :email
-  - if policy(@user).reset_password? && false
-    = f.input :password
-    = f.input :password_confirmation
-  = f.association :occupation, collection: Occupation.active
-  - unless params[:action] == 'edit_profile'
-    = f.association :user_group, collection: UserGroup.active
-    = f.association :roles, collection: (current_user.superadmin? ? Role.all : Role.not_system)
-    - ClassifierPermission.configurable_classifiers.each do |classifier|
-      = f.association "available_#{classifier.name.tableize}", collection: classifier.all
-  = f.input :avatar
-  = f.input :tag, as: :tags
-= collapsible_box :additional, form: true do
-  = f.input :email_signature, as: :ckeditor, input_html: { :ckeditor => {:toolbar => 'Full'}, id: 'ckeditor' }
+  = f.submit

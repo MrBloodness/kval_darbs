@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'sqlite3'

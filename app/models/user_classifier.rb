@@ -1,6 +1,6 @@
 class UserClassifier < ApplicationRecord
 
-  self.icon = 'list'
+  # self.icon = 'list'
 
   class_attribute :colorable
   self.colorable = false

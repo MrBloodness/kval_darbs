@@ -4,7 +4,7 @@ class ClassifierPermission < ApplicationRecord
 
   class_attribute :configurable_classifiers
   self.configurable_classifiers = [
-    DocumentRegisterCategory
+    # DocumentRegisterCategory
   ]
 
   def self.available?(classifier)

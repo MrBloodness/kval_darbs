@@ -194,7 +194,7 @@ module DisplayHelper
     classes << 'collapsed-box' if options[:collapse]
     classes << 'form-collapsed-box' if options[:form]
     html = ActiveSupport::SafeBuffer.new
-    html << collapsible_box_head(title, options) unless options[:label] == false
+    # html << collapsible_box_head(title, options) unless options[:label] == false
     html << \
       content_tag(:div, class: 'box-body') do
         capture(&block)
@@ -206,24 +206,24 @@ module DisplayHelper
     end
   end
 
-  def collapsible_box_head(title, options)
-    title = options[:title] || t("data_blocks.#{title}")
-    postfix = options[:title_postfix] || ""
-    content_tag(:div, class: 'box-header with-border') do
-      content_tag(:h3, title + postfix, class: 'box-title') +
-        content_tag(:div, class: "box-tools pull-right") do
-          if options[:no_collapsable]
-            ActiveSupport::SafeBuffer.new
-          else
-            content_tag(:button, class: "btn btn-box-tool",
-              data: { widget: "collapse" }) do
-              content_tag(:i, nil,
-                class: "fa fa-#{options[:collapse] ? 'plus' : 'minus'}")
-            end
-          end
-        end
-    end
-  end
+  # def collapsible_box_head(title, options)
+  #   title = options[:title] || t("data_blocks.#{title}")
+  #   postfix = options[:title_postfix] || ""
+  #   content_tag(:div, class: 'box-header with-border') do
+  #     content_tag(:h3, title + postfix, class: 'box-title') +
+  #       content_tag(:div, class: "box-tools pull-right") do
+  #         if options[:no_collapsable]
+  #           ActiveSupport::SafeBuffer.new
+  #         else
+  #           content_tag(:button, class: "btn btn-box-tool",
+  #             data: { widget: "collapse" }) do
+  #             content_tag(:i, nil,
+  #               class: "fa fa-#{options[:collapse] ? 'plus' : 'minus'}")
+  #           end
+  #         end
+  #       end
+  #   end
+  # end
 
   def drag_indicator(options = {})
     klass = options[:class] || 'drag-indicator'
