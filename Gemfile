@@ -9,16 +9,20 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'slim-rails'
+gem 'simple_form'
 gem 'bootsnap', require: false
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'byebug',  '9.0.6', platform: :mri
+  gem 'byebug', '9.0.6', platform: :mri
 end
 
 group :development do
   gem 'web-console'
   gem 'listen'
+  gem 'annotate'
   gem 'spring'
   gem 'spring-watcher-listen'
 end

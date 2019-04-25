@@ -1,15 +1,24 @@
-= form_for @user do |f|
-  - if @user.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-      ul
-        - @user.errors.full_messages.each do |message|
-          li = message
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .actions = f.submit
+= simple_form_for @user, validate: true, url: @form_url, html: { multipart: true }, remote: @remote || params['layout'] == 'false' do |f|
+  .full-container.content
+    .form-inputs
+      .row
+        .col-md-12
+          .box.box-primary
+            .box-header.with-border
+              .box-title = t "actions.#{action_name}"
+            .box-body
+              = render 'form_fields', f: f
+              - if resource.respond_to?(:file_attachments)
+                = render 'file_attachments/form_multiupload'
+              - elsif resource.respond_to?(:email_attachments)
+                = render 'email_attachments/form_multiupload'
+              .col-xs-12
+                = nested_forms_wrapper
+                  = render 'nested_forms', f: f
+              .col-xs-12.form-save-button
+                = save_button
+                - if f.object.new_record?
+                  input type='checkbox' name='create_another' class='create_another-checkbox'
+                  span.create_another-label = t('actions.create_another')
+              = content_for :popup_footer do
+                = save_button [resource], id: 'footer_save_button'

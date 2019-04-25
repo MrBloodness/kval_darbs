@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_20_205031) do
+ActiveRecord::Schema.define(version: 2019_04_25_084035) do
+
+  create_table "classifier_permissions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "user_classifier_id"
+    t.index ["user_classifier_id"], name: "index_classifier_permissions_on_user_classifier_id"
+    t.index ["user_id"], name: "index_classifier_permissions_on_user_id"
+  end
+
+  create_table "user_classifiers", force: :cascade do |t|
+    t.string "type"
+    t.boolean "is_system", default: false
+    t.boolean "is_active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "color"
+    t.integer "position", limit: 4, null: false
+    t.string "key"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "surname"
+    t.integer "occupation_id"
+    t.integer "state_id"
+    t.integer "department_id"
+    t.date "employed_since"
+    t.decimal "salary", precision: 6, scale: 2
+    t.string "avatar_file_name"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

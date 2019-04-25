@@ -1,0 +1,87 @@
+Rails:
+  Enabled: true
+AllCops:
+  Exclude:
+    - Rakefile
+    - 'bin/*'
+    - 'lib/tasks/*'
+    - '**/db/schema.rb'
+    - '**/db/migrate/*'
+    - '**/config/**/*'
+    - '**/test/**/*'
+    - 'vendor/**/*'
+    - '**/lib/migrator/*'
+    - '**/public/system/**/*'
+  TargetRubyVersion: 2.2
+RescueModifier:
+  Enabled: false
+NestedParenthesizedCalls:
+  Enabled: false
+Alias:
+  Enabled: false
+StringLiterals:
+  Enabled: false
+Documentation:
+  Enabled: false
+AlignParameters:
+  Enabled: false
+ClassLength:
+  Max: 300
+ModuleLength:
+  Max: 300
+MethodLength:
+  Max: 50
+HasAndBelongsToMany:
+  Enabled: false
+AssignmentInCondition:
+  Enabled: false
+LineLength:
+  Max: 100
+HashSyntax:
+  Enabled: false
+PercentLiteralDelimiters:
+  Enabled: false
+WordArray:
+  Enabled: false
+BracesAroundHashParameters:
+  Enabled: false
+AlignHash:
+  Enabled: false
+SignalException:
+  Enabled: false
+CyclomaticComplexity:
+  Max: 10
+SpaceBeforeFirstArg:
+  Enabled: false
+IfUnlessModifier:
+  Enabled: false
+GuardClause:
+  Enabled: false
+DotPosition:
+  Enabled: false
+HandleExceptions:
+  Enabled: false
+Rails/Output:
+  Enabled: false
+UnusedMethodArgument:
+  Enabled: false
+Next:
+  Enabled: false
+UnusedBlockArgument:
+  Enabled: false
+PerlBackrefs:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Max: 10
+Metrics/AbcSize:
+  Max: 35
+Style/SymbolProc:
+  Enabled: false
+Style/TrivialAccessors:
+  ExactNameMatch: true
+Style/GlobalVars:
+  AllowedVariables: [$redis]
+Style/MultilineMethodCallBraceLayout:
+  Enabled: false
+Style/MultilineArrayBraceLayout:
+  Enabled: false

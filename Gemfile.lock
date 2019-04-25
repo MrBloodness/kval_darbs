@@ -42,10 +42,19 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    annotate (2.7.4)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arel (9.0.0)
+    autoprefixer-rails (9.5.1)
+      execjs
     bindex (0.7.0)
     bootsnap (1.4.3)
       msgpack (~> 1.0)
+    bootstrap (4.0.0)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (9.0.6)
     coffee-rails (4.2.2)
@@ -92,7 +101,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
-    pg (0.20.0)
+    popper_js (1.14.5)
     puma (3.12.1)
     rack (2.0.7)
     rack-test (1.1.0)
@@ -137,6 +146,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    simple_form (4.1.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -181,16 +193,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   bootsnap
+  bootstrap (~> 4.0.0)
   byebug (= 9.0.6)
   coffee-rails
   jbuilder
   jquery-rails
   listen
-  pg (= 0.20.0)
   puma
   rails
   sass-rails
+  simple_form
   slim-rails
   spring
   spring-watcher-listen
