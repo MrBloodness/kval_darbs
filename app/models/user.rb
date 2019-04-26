@@ -1,8 +1,7 @@
 class User < ApplicationRecord
 
-  # devise :invitable, :database_authenticatable, :omniauthable,
-  #        :recoverable, :rememberable, :trackable, :validatable, :lockable,
-  #        :doorkeeper
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
   validates :email, :name, :surname, presence: true
   # validate :validates_password_confirmation

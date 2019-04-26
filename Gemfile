@@ -9,11 +9,20 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'slim-rails'
+gem 'slim'
 gem 'simple_form'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+
+# Icons
 gem 'font-awesome-rails'
+
+# Authentication
+gem 'devise'
+gem 'devise_invitable'
+gem 'doorkeeper'
+gem 'omniauth'
 
 group :development, :test do
   gem 'sqlite3'
