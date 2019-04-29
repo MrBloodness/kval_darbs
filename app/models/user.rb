@@ -3,8 +3,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :email, :name, :surname, presence: true
-  # validate :validates_password_confirmation
+  validate :validates_password_confirmation
   validates :password, length: { in: 8..128 },
     on: [:update, :create],
     allow_blank: true

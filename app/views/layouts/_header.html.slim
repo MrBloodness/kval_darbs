@@ -1,13 +1,13 @@
 header.navbar.navbar-fixed-top.navbar-inverse
   .container
-    = link_to "sample app", root_path, id: "logo"
+    = link_to "Kval darbs", root_path, id: "logo"
     nav
       ul.nav.navbar-nav.navbar-right
         li
           = link_to "Home", root_path
         li
           = link_to "Help", session_help_path
-        - if logged_in?
+        - if current_user.present?
           li
             = link_to "Users", users_path
           li.dropdown

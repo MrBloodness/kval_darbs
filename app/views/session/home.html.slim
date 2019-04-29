@@ -1,13 +1,7 @@
 - if logged_in?
-  .row
-    aside.col-md-4
-      section.user_info
-        = render 'shared/user_info'
-      section.stats
-      	= render 'shared/stats'
-      section.micropost_form
-        = render 'shared/micropost_form'
-    .col-md-8
+	.center.jumbotron
+	  h1
+	    | Welcome to Uzņēmuma personālvadības sistēma
 - else
 	.center.jumbotron
 	  h1
@@ -17,4 +11,4 @@
 	    a[href="http://www.lu.lv/"]
 	      | Qualifiaction work
 	    |  sample application. 
-	  = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"
+	  = link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary"

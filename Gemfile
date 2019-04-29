@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'puma'
+gem 'sass'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -12,7 +13,7 @@ gem 'slim-rails'
 gem 'slim'
 gem 'simple_form'
 gem 'bootsnap', require: false
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'jquery-rails'
 
 # Icons
