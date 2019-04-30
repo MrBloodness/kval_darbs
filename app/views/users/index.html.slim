@@ -4,6 +4,7 @@ table
   thead
     tr
       th Name
+      th Surname
       th Email
       th
       th
@@ -13,6 +14,7 @@ table
     - @users.each do |user|
       tr
         td = user.name
+        td = user.surname
         td = user.email
         td = link_to 'Show', user
         td = link_to 'Edit', edit_user_path(user)
